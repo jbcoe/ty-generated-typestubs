@@ -15,8 +15,8 @@ FetchContent_Declare(
 FetchContent_MakeAvailable(nanobind)
 
 nanobind_add_module(_core
-    src/bind_add.cc
-    src/add.cc
+    cc/bind_add.cc
+    cc/add.cc
 )
 
 nanobind_add_stub(
@@ -27,7 +27,7 @@ nanobind_add_stub(
   DEPENDS _core
 )
 
-target_include_directories(_core PUBLIC src)
+target_include_directories(_core PUBLIC cc)
 
 install(TARGETS _core DESTINATION ty_generated_typestubs)
 install(FILES ${CMAKE_CURRENT_BINARY_DIR}/_core.pyi ${CMAKE_CURRENT_BINARY_DIR}/py.typed DESTINATION ty_generated_typestubs)

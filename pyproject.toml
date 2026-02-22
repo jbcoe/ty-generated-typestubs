@@ -1,6 +1,7 @@
 [build-system]
 requires = ["scikit-build-core", "nanobind"]
 build-backend = "scikit_build_core.build"
+wheel.packages = ["python/ty_generated_typestubs"]
 
 [project]
 name = "ty-generated-typestubs"
