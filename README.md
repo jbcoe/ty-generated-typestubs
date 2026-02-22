@@ -8,9 +8,7 @@ This project requires `uv`, see: https://github.com/astral-sh/uv?tab=readme-ov-f
 
 Although the typestubs are installed alongside the shared library, typecheckers such as [ty](https://github.com/astral-sh/ty) are unable to find the typestubs and report errors.
 
-## Problematic behaviour
-
-### Using ty
+## Problematic behaviour using ty
 
 ```sh
 uv run ty check
@@ -29,22 +27,6 @@ info:   3. vendored://stdlib (stdlib typeshed stubs vendored by ty)
 info:   4. /Users/jbcoe/jbcoe.github/ty-generated-typestubs/.venv/lib/python3.13/site-packages (site-packages)
 info: make sure your Python environment is properly configured: https://docs.astral.sh/ty/modules/#python-environment
 info: rule `unresolved-import` is enabled by default
-```
-
-### Using pyrefly
-
-```
-uv run pyrefly check
- INFO Found `/Users/jbcoe/jbcoe.github/ty-generated-typestubs/pyproject.toml` marking project root, checking root directory with default configuration
-ERROR Cannot find module `__unknown__._core` [missing-import]
- --> ty_generated_typestubs/__init__.py:1:1
-  |
-1 | from ._core import add
-  | ^^^^^^^^^^^^^^^^^^^^^^
-  |
-  Looked in these locations (from default config for project root marked by `/Users/jbcoe/jbcoe.github/ty-generated-typestubs/pyproject.toml`):
-  Import root (inferred from project layout): "/Users/jbcoe/jbcoe.github/ty-generated-typestubs/src"
-  Site package path queried from interpreter: ["/Users/jbcoe/jbcoe.github/ty-generated-typestubs/.venv/lib/python3.13/site-packages", "/Users/jbcoe/jbcoe.github/ty-generated-typestubs"]
 ```
 
 ## Expected Behavior
