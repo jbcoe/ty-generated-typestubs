@@ -17,8 +17,8 @@ fi
 cp "${PROJECT_DIR}/script.py" "${WORKDIR}/script.py"
 
 cd ${WORKDIR};
-uv init && uv add ty pyrefly
-uv pip install "${PROJECT_DIR}/dist/"*".whl"
+uv init && uv add ty pip
+uv run pip install "${PROJECT_DIR}/dist/"*".whl"
 
 echo ================================================================================
 
