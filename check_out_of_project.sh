@@ -26,8 +26,3 @@ echo Running type checks with ty ...
 uv run ty check
 
 echo ================================================================================
-
-echo Running type checks with pyrefly ...
-uv run pyrefly check
-
-echo ================================================================================
